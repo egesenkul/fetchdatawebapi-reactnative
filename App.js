@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import {
     StyleSheet,
     Text,
+    TouchableHighlight,
     FlatList,
+    Alert,
     View
 } from 'react-native';
 
@@ -28,9 +30,16 @@ class Liste extends  Component{
                     data={this.state.data}
                     keyExtractor={(x, i) => i.toString()}
                     renderItem={({ item }) =>
-                        <Text style={{padding:5}}>
-                            {`${item.name.first} ${item.name.last}`}
-                        </Text>}
+                    {
+                        return(
+                            <TouchableHighlight onPress={() => Alert.alert(`${item.name.first} ${item.name.last}`)}>
+                                <Text style={{padding:5}}>
+                                    {`${item.name.first} ${item.name.last}`}
+                                </Text>
+                            </TouchableHighlight>
+                        )
+                    }
+                       }
                 />
             </View>
         );
