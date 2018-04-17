@@ -1,0 +1,3 @@
+rootProject.name = 'fetchdatawebapi'
+
+include ':app'
